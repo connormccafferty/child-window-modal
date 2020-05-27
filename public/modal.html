@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>modal</title>
+  </head>
+  <body>
+    <p>Modal running on Version: <span id="of-version"></span></p>
+  </body>
+  <script>
+    const ofVersion = document.getElementById("of-version");
+    if (typeof fin !== "undefined") {
+      fin.System.getVersion()
+        .then((v) => (ofVersion.textContent = v))
+        .catch(console.error);
+    } else {
+      ofVersion.textContent = "You are probably running in a browser.";
+    }
+  </script>
+</html>
